@@ -1,11 +1,11 @@
 # Producer Consumer
 
-Solving the Producer-Consumer problem using POSIX threads and a queue.
+Solving the Producer-Consumer problem using POSIX threads and a shared circular queue.
 
 ## Usage
 
-Run with
+Compile with `make`
 
-"./main queue_size number_of_jobs number_of_producers number_of_consumers" e.g.
+Run with 5 command-line arguments including ./main: queue_size number_of_jobs number_of_producers number_of_consumers
 
-`./main 5 10 2 2`
+Example: `./main 5 10 2 2`
