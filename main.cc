@@ -139,11 +139,11 @@ void *producer (void *id) {
     sem_signal(sem_id, MUTEX);
     sem_signal(sem_id, FULL);
 
-    cout << "Producer (" << producer_id << "): Job id " << current_job.id 
+    cerr << "Producer (" << producer_id << "): Job id " << current_job.id 
     << " duration " << current_job.duration << endl;
   }
 
-  cout << "Producer (" << producer_id << "): No more jobs left to generate" << endl;
+  cerr << "Producer (" << producer_id << "): No more jobs left to generate" << endl;
 
   pthread_exit(0);
 }
@@ -165,16 +165,16 @@ void *consumer (void *id) {
     sem_signal(sem_id, MUTEX);
     sem_signal(sem_id, EMPTY);
 
-    cout << "Consumer (" << consumer_id << "): Job id " << current_job.id
+    cerr << "Consumer (" << consumer_id << "): Job id " << current_job.id
     << " executing sleep duration " << current_job.duration << endl;
 
     sleep(current_job.duration);
 
-    cout << "Consumer (" << consumer_id << "): Job id " << current_job.id 
+    cerr << "Consumer (" << consumer_id << "): Job id " << current_job.id 
     << " completed" << endl;
   }
 
-  cout << "Consumer (" << consumer_id << "): No more jobs left" << endl;
+  cerr << "Consumer (" << consumer_id << "): No more jobs left" << endl;
 
   pthread_exit(0);
 }
